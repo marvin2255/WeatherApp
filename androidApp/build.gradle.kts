@@ -2,6 +2,10 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.compose.compiler)
+    id("com.google.devtools.ksp")
+
+
+
 }
 
 android {
@@ -43,4 +47,14 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+
+    implementation(libs.koin.androidx.compose)
+
+    implementation(libs.ktor.client.android)
+    implementation(libs.accompanist.permissions)
+
+    implementation(libs.glide.compose)
+    //ksp dependencies
+    implementation(libs.dagger)
+    ksp(libs.dagger.compiler)
 }
